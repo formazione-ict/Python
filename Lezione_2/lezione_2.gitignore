@@ -1,0 +1,6 @@
+# --- File Dati Generati ---
+*.json
+*.txt
+*.csv
+# Mantieni però i file di esempio se sono in una cartella 'data/'
+!data/*.json
