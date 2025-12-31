@@ -1,5 +1,5 @@
 """
-LEZIONE 1: Basi delle Liste
+ESEMPIO 1: Basi delle Liste
 Questo script illustra come creare liste e accedere ai loro elementi.
 """
 
