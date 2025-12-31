@@ -30,3 +30,5 @@ pandas-avanzato/
 ├── README.md                 # Guida
 
 └── requirements.txt
+
+Per il progetto finale (05_progetto_ecommerce.ipynb), ti consiglio di scaricare un dataset reale da Kaggle (es. "Brazilian E-Commerce Public Dataset by Olist") per far provare le operazioni di merge su file da milioni di righe, dove l'efficienza inizia a contare.
