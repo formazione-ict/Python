@@ -25,4 +25,3 @@ corso-oop-python/
 
 ├── README.md                 # Guida e spiegazioni
 
-└── requirements.txt          # (Vuoto, solo stdlib)
