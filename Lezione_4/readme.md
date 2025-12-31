@@ -1,4 +1,4 @@
-#Struttura completa e modulare
+Struttura completa e modulare
 
 Ho diviso gli argomenti in 5 notebook progressivi (.ipynb) per facilitare l'apprendimento passo-passo, più un file di dati di esempio.
 
@@ -27,3 +27,9 @@ corso-python-pandas/
 ├── README.md                          # Istruzioni
 
 └── requirements.txt                   # Dipendenze
+
+Consigli per l'uso
+
+1. Dati Reali: Nel progetto finale, puoi sostituire la creazione del dataset finto con df = pd.read_csv('tuo_file.csv').
+2. Dataset Sample: Se vuoi fornire un CSV fisico, puoi eseguire il primo blocco del notebook 5 e poi salvare il risultato con to_csv.
+3. Jupyter Lab: È l'ambiente ideale. Basta lanciare jupyter lab nella cartella e aprire i file .ipynb.
