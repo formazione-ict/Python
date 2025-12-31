@@ -1,0 +1,27 @@
+# --- Python ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Ambienti Virtuali ---
+# È fondamentale non caricare l'intero ambiente virtuale (pesa centinaia di MB)
+# L'utente lo ricreerà con 'pip install'
+venv/
+.venv/
+env/
+
+# --- IDE e Editor ---
+# Impostazioni specifiche del tuo computer che non servono agli altri
+.idea/      # PyCharm
+.vscode/    # VS Code
+.rdb        # Thonny (a volte crea file temporanei)
+
+# --- Sistema Operativo ---
+.DS_Store   # Mac
+Thumbs.db   # Windows
+
+# --- Dati Sensibili (Buona norma insegnarlo subito) ---
+.env
+api_keys.txt
+
