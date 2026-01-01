@@ -2,23 +2,60 @@
 
 matplotlib-corso/
 
-├── README.md
+├── readme.md
 
 ├── requirements.txt
 
-├── 00_setup_check.py
+├── .gitignore
 
-├── 01_quickstart_oo.py
+├── lessons/
 
-├── 02_linee_stile_legend.py
+│   ├── 00_setup_check.py
 
-├── 03_subplots_dashboard.py
+│   ├── 01_quickstart_oo.py
 
-├── 04_timeseries_date_formatter.py
+│   ├── 02_linee_stile_legend.py
 
-├── 05_heatmap_imshow.py
+│   ├── 03_subplots_dashboard.py
 
-└── 06_export_savefig.py
+│   ├── 04_timeseries_date_formatter.py
+
+│   ├── 05_heatmap_imshow.py
+
+│   └── 06_export_savefig.py
+
+├── exercises/
+
+│   ├── ex01_line_plot.py
+
+│   ├── ex02_bar_chart.py
+
+│   ├── ex03_subplots_2x2.py
+
+│   ├── ex04_timeseries.py
+
+│   ├── ex05_heatmap.py
+
+│   └── ex06_export.py
+
+├── solutions/
+
+│   ├── ex01_line_plot_solution.py
+
+│   ├── ex02_bar_chart_solution.py
+
+│   ├── ex03_subplots_2x2_solution.py
+
+│   ├── ex04_timeseries_solution.py
+
+│   ├── ex05_heatmap_solution.py
+
+│   └── ex06_export_solution.py
+
+└── outputs/
+
+    └── .gitkeep
+
 
 #Software e setup di sviluppo
 
