@@ -1,0 +1,41 @@
+name: Matplotlib smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Import test: fallisce subito se Matplotlib non importa correttamente
+      - name: Import check
+        run: python -c "import matplotlib; import matplotlib.pyplot as plt; print(matplotlib.__version__)"
+
+      # Esecuzione senza GUI: forza backend non-interattivo
+      - name: Run scripts headless
+        env:
+          MPLBACKEND: Agg
+        run: |
+          python lessons/00_setup_check.py
+          python lessons/01_quickstart_oo.py
+          python lessons/06_export_savefig.py
