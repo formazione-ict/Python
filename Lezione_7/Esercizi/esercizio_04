@@ -1,0 +1,10 @@
+Questo esercizio è perfetto per introdurre:
+- pd.date_range() per generare indici temporali
+- pd.Series con indice datetime
+- .rolling(window=7).mean() come tecnica di smoothing
+- la differenza visiva tra serie rumorosa e serie smussata
+- la gestione delle date in matplotlib (tick automatici, formattazione)
+
+Se vuoi, puoi creare anche:
+- una versione avanzata con formattazione delle date (mdates)
+- una versione con più rolling windows (7, 14, 30)
