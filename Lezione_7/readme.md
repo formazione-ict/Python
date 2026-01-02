@@ -1,10 +1,10 @@
 # Corso Matplotlib (Python)
 
 Repository didattico per imparare Matplotlib tramite:
-- lezioni progressive (cartella `lessons/`)
-- esercizi (cartella `exercises/`)
-- soluzioni (cartella `solutions/`)
-- output esportati (cartella `outputs/`)
+- lezioni progressive (cartella `Lezioni/`)
+- esercizi (cartella `Esercizi/`)
+- soluzioni (cartella `Soluzioni/`)
+- output esportati (cartella `Outputs/`)
 
 ## Software consigliato
 - Python 3.10+ (consigliato 3.11 o 3.12)
@@ -39,7 +39,7 @@ matplotlib-corso/
 
 ├── .gitignore
 
-├── lessons/
+├── Lezioni/
 
 │   ├── 00_setup_check.py
 
@@ -55,7 +55,7 @@ matplotlib-corso/
 
 │   └── 06_export_savefig.py
 
-├── exercises/
+├── Esercizi/
 
 │   ├── ex01_line_plot.py
 
@@ -69,7 +69,7 @@ matplotlib-corso/
 
 │   └── ex06_export.py
 
-├── solutions/
+├── Soluzioni/
 
 │   ├── ex01_line_plot_solution.py
 
@@ -83,7 +83,7 @@ matplotlib-corso/
 
 │   └── ex06_export_solution.py
 
-└── outputs/
+└── Outputs/
 
     └── .gitkeep
 
