@@ -1,0 +1,4 @@
+Questo esercizio è ottimo per far capire:
+- la differenza tra DPI (solo per raster: PNG, JPG) e PDF (vettoriale)
+- perché bbox_inches='tight' evita tagli di etichette e titoli
+- come esportare lo stesso grafico in più formati senza duplicare codice
