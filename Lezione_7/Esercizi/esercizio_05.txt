@@ -1,0 +1,10 @@
+Questo esercizio è perfetto per far capire:
+- differenza tra imshow e pcolormesh
+- come funziona aspect='auto'
+- come collegare una colorbar a un’immagine (fig.colorbar(im, ax=ax))
+- come interpretare matrici come immagini
+
+Se vuoi, puoi preparare anche:
+- una versione con annotazioni nelle celle
+- una versione con colormap personalizzata
+- una versione con normalizzazione avanzata (Normalize, LogNorm)
