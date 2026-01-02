@@ -1,0 +1,7 @@
+Questo esercizio è perfetto per capire:
+- come gestire un array di assi axs[r, c]
+- come mantenere uno stile coerente tra grafici diversi
+- come costruire una dashboard compatta e leggibile
+- come usare layout='constrained' per evitare sovrapposizioni
+
+Se vuoi, puoi preparare una versione avanzata con palette coerenti e annotazioni
