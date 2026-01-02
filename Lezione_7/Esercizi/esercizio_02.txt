@@ -1,0 +1,7 @@
+Questo esercizio è ottimo per capire:
+- come personalizzare i colori in base ai dati
+- come usare ax.text() per annotare i grafici
+- come usare np.argmax() per individuare un valore massimo
+- come mantenere la separazione tra creazione figura, plot, annotazioni, export
+
+Se vuoi, puoi preparare anche una versione avanzata con palette dinamiche e annotazioni più eleganti
