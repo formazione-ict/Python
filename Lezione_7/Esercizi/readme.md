@@ -1,4 +1,4 @@
-# 🚀 Utilizzo del template
+# Utilizzo del template
 Questo template è potente per la didattica
 ## ✔ Struttura modulare
 Gli studenti vedono chiaramente:
@@ -8,14 +8,14 @@ Gli studenti vedono chiaramente:
 - stile
 - export
 - show
-- 
+
 Questo riduce confusione e aumenta la leggibilità.
 ## ✔ Anticipa errori tipici
 - cartella outputs/ sempre creata
 - export sempre prima di plt.show()
 - OO API obbligatoria
 - legenda funzionante grazie ai label=
-##✔ Riutilizzabile per tutti gli esercizi
+## ✔ Riutilizzabile per tutti gli esercizi
 Basta cambiare:
 - i dati
 - i plot
