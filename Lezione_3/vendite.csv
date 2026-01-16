@@ -1,0 +1,11 @@
+id,data,cliente,citta,regione,prodotto,categoria,quantita,prezzo_unitario,totale,canale,pagamento
+1,2025-01-01,Marco Rossi,Milano,Lombardia,Notebook A4,Cartoleria,5,3.50,17.50,Online,Carta
+2,2025-01-01,Laura Bianchi,Roma,Lazio,Penna Blu,Scrittura,12,0.80,9.60,Negozio,Contanti
+3,2025-01-01,Giulia Verdi,Torino,Piemonte,Evidenziatore Giallo,Scrittura,4,1.20,4.80,Online,Carta
+4,2025-01-02,Paolo Neri,Bari,Puglia,Quaderno Rigido,Cartoleria,7,4.20,29.40,Negozio,Carta
+5,2025-01-02,Anna Russo,Napoli,Campania,Penna Nera,Scrittura,10,0.85,8.50,Online,PayPal
+6,2025-01-02,Francesco Gallo,Genova,Liguria,Matita HB,Scrittura,15,0.40,6.00,Negozio,Contanti
+7,2025-01-03,Sara Fontana,Firenze,Toscana,Cartellina Rossa,Ufficio,6,1.50,9.00,Online,Carta
+8,2025-01-03,Elena Costa,Palermo,Sicilia,Blocco Note,Cartoleria,3,2.80,8.40,Negozio,Carta
+9,2025-01-03,Matteo Serra,Verona,Veneto,Penna Rossa,Scrittura,9,0.90,8.10,Online,PayPal
+10,2025-01-04,Chiara Leone,Bologna,Emilia-Romagna,Notebook A4,Cartoleria,8,3.50,28.00,Negozio,Carta
