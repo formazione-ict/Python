@@ -13,30 +13,37 @@ Per iniziare:
 - Cos'è: Libreria per il calcolo numerico e gli array.
 - Perché: Operazioni veloci su grandi dataset e matrici.
 - Come aiuta: Rende i calcoli matematici e l'elaborazione dei dati estremamente veloci.
+
 **PANDAS**
 - Cos'è: Libreria per l'analisi e la manipolazione dei dati.
 - Perché: Facile gestione di file CSV, Excel e database.
 - Come aiuta: Pulisce, filtra e analizza i dati in poche righe di codice.
+
 **MATPLOTLIB**
 - Cos'è: Libreria per la visualizzazione dei dati.
 - Perché: Creare grafici e diagrammi.
 - Come aiuta: Trasforma dati grezzi in informazioni visive.
+
 **SEABORN**
 - Cos'è: Libreria avanzata per la visualizzazione basata su Matplotlib.
 - Perché: Grafici statistici dall'aspetto migliore.
 - Come aiuta: Permette di creare grafici professionali e puliti con facilità.
+
 **SCIKIT-LEARN**
 - Cos'è: Libreria per il machine learning.
 - Perché: Costruire modelli di machine learning facilmente.
 - Come aiuta: Fornisce algoritmi pronti per previsioni e classificazioni.
+
 **TENSORFLOW**
 - Cos'è: Framework per il deep learning.
 - Perché: Per reti neurali e modelli di intelligenza artificiale.
 - Come aiuta: Alimenta sistemi di riconoscimento delle immagini, elaborazione del linguaggio naturale e sistemi di raccomandazione.
+
 **PYTORCH**
 - Cos'è: Libreria per il deep learning.
 - Perché: Flessibile e adatta alla ricerca.
 - Come aiuta: Utilizzata per addestrare modelli di intelligenza artificiale avanzati con facilità.
+
 **OPENCV**
 - Cos'è: Libreria per la visione artificiale.
 - Perché: Elaborazione di immagini e video.
