@@ -35,5 +35,5 @@ Aggiungi rumore casuale ai prezzi e osserva come cambia la regressione.
 # VERSIONE 4 — Con Grafico 3D (superficie + stanze + prezzo)
 Visualizza i dati e il piano di regressione in 3D.
 
-
-
+# Valutazione Completa (MAE, MSE, RMSE, R²)
+Calcola tutte le metriche principali di regressione.
