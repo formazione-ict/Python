@@ -23,4 +23,17 @@ Hai un dataset sintetico con:
 - 4 stanze
 4. Visualizza la predizione.
 
+# VERSIONE 1 — Con Train-Test Split
+Dividi il dataset in train (70%) e test (30%), allena il modello e valuta l’accuratezza R².
+
+# VERSIONE 2 — Con StandardScaler
+Applica lo scaling alle feature prima di addestrare il modello.
+
+# VERSIONE 3 — Con Rumore nei Dati (per mostrare robustezza)
+Aggiungi rumore casuale ai prezzi e osserva come cambia la regressione.
+
+# VERSIONE 4 — Con Grafico 3D (superficie + stanze + prezzo)
+Visualizza i dati e il piano di regressione in 3D.
+
+
 
