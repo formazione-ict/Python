@@ -133,8 +133,9 @@ Hai un modello che classifica email:
 - 0 = non spam
 Vuoi confrontare le predizioni con le etichette reali e calcolare tutte le metriche.
 
-Interpretazione didattica
-| Metrica | Significato | 
+## Interpretazione didattica
+| Metrica | Significato |
+|-----------|-----------------------------------|
 | Accuracy | 75% delle predizioni sono corrette | 
 |  |  | 
 |  |  | 
