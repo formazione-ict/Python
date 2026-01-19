@@ -113,5 +113,16 @@ Tre gruppi ben separati:
 - Utenti medi
 - Utenti molto attivi
 
+# Esercizio: Riduzione dimensionale con PCA
+## Obiettivo
+Hai un dataset con 5 feature. Vuoi:
+- Ridurre a 2 componenti principali
+- Visualizzare i dati ridotti
+- Analizzare quanta varianza viene mantenuta
 
+## Estensioni didattiche
+- Aumenta `n_components` per vedere come cresce la varianza mantenuta
+- Visualizza la curva cumulativa con `PCA(n_components=None)`
+- Usa `load_digits` o `load_iris` per dataset reali
+- Confronta PCA con `TruncatedSVD` o `t-SNE` per dati non lineari
 
