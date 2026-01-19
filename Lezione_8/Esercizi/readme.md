@@ -126,3 +126,21 @@ Hai un dataset con 5 feature. Vuoi:
 - Usa `load_digits` o `load_iris` per dataset reali
 - Confronta PCA con `TruncatedSVD` o `t-SNE` per dati non lineari
 
+# Esercizio: Classificare email come spam o non spam
+## Obiettivo
+Hai un modello che classifica email:
+- 1 = spam
+- 0 = non spam
+Vuoi confrontare le predizioni con le etichette reali e calcolare tutte le metriche.
+
+Interpretazione didattica
+| Metrica | Significato | 
+| Accuracy | 75% delle predizioni sono corrette | 
+|  |  | 
+|  |  | 
+|  |  | 
+|  |  | 
+
+
+
+
