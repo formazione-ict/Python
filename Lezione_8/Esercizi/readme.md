@@ -142,6 +142,17 @@ Vuoi confrontare le predizioni con le etichette reali e calcolare tutte le metri
 | F1 Score | Bilancia precisione e copertura | 
 | Confusion Matrix | Mostra errori e successi per ogni classe | 
 
+# Esercizio: Valutare un modello con due strategie
+## Obiettivo
+Confrontare:
+- Train-Test Split → una sola divisione
+- K-Fold Cross-Validation → valutazione più robusta
+
+## Estensioni possibili
+- Usa StratifiedKFold per classi sbilanciate
+- Calcola anche precision, recall, f1 per ogni fold
+- Visualizza la distribuzione degli score con matplotlib
+
 
 
 
