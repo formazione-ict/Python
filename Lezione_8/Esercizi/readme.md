@@ -100,5 +100,18 @@ weighted avg       1.00      1.00      1.00         6
 - Usa predict_proba per analizzare la sicurezza delle predizioni
 - Introduci noise per mostrare la fragilità del Decision Tree
 
-Vuoi che lo trasformi in un notebook didattico con celle, domande guidate e sezioni markdown? Posso anche aggiungere una versione con GridSearchCV per ottimizzare i parametri. Fammi sapere!
+# Esercizio: Raggruppare utenti in base a comportamento
+## Obiettivo
+Raggruppare utenti in base a:
+- Tempo medio sul sito
+- Numero di pagine visitate
+Non abbiamo etichette (y), quindi usiamo K-Means per scoprire gruppi nascosti.
+
+## Output atteso
+Tre gruppi ben separati:
+- Utenti brevi e poco attivi
+- Utenti medi
+- Utenti molto attivi
+
+
 
