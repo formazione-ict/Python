@@ -153,6 +153,16 @@ Confrontare:
 - Calcola anche precision, recall, f1 per ogni fold
 - Visualizza la distribuzione degli score con matplotlib
 
+# Esercizio: Ottimizzare Random Forest con GridSearchCV
+## Obiettivo
+- Allenare un modello Random Forest
+- Ottimizzare gli iperparametri `n_estimators` e `max_depth`
+- Valutare il miglior modello trovato
 
+## Estensioni didattiche
+- Usa `StratifiedKFold` per classi sbilanciate
+- Aggiungi `scoring='f1'` per ottimizzare metriche diverse
+- Visualizza la matrice dei risultati con `pandas.DataFrame(grid.cv_results_)`
+- Confronta con `RandomizedSearchCV` per tuning più veloce
 
 
