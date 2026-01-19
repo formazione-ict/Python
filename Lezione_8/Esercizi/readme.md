@@ -135,12 +135,12 @@ Vuoi confrontare le predizioni con le etichette reali e calcolare tutte le metri
 
 ## Interpretazione didattica
 | Metrica | Significato |
-|-----------|-----------------------------------|
+|----------|-----------------------------------|
 | Accuracy | 75% delle predizioni sono corrette | 
-|  |  | 
-|  |  | 
-|  |  | 
-|  |  | 
+| Precision | 75% delle email classificate come spam erano davvero spam | 
+| Recall | Il modello ha trovato il 60% degli spam reali | 
+| F1 Score | Bilancia precisione e copertura | 
+| Confusion Matrix | Mostra errori e successi per ogni classe | 
 
 
 
