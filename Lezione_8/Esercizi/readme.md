@@ -165,4 +165,10 @@ Confrontare:
 - Visualizza la matrice dei risultati con `pandas.DataFrame(grid.cv_results_)`
 - Confronta con `RandomizedSearchCV` per tuning più veloce
 
+@ Esercizio: Diagnosi del fitting di un modello
+## Obiettivo
+Confrontare tre modelli:
+- Underfitting → troppo semplice
+- Giusto → bilanciato
+- Overfitting → troppo complesso
 
