@@ -63,3 +63,42 @@ Messaggio 6: Probabilità spam = 0.00, Classe predetta = 0
 - Usare StandardScaler per normalizzare le feature
 - Cambiare la soglia di classificazione (es. spam se prob > 0.7)
 - Visualizzare la curva ROC o precision-recall
+
+# Esercizio: Classificare utenti come “premium” o “standard”
+## Obiettivo:
+Prevedere se un utente è premium (1) o standard (0) in base a:
+- Numero di acquisti
+- Tempo medio sul sito
+- Numero di recensioni lasciate
+
+## Output atteso
+🔍 Decision Tree  
+Accuracy: 1.0  
+              precision    recall  f1-score   support
+
+   0               1.00      1.00      1.00         3  
+   1               1.00      1.00      1.00         3
+
+   accuracy                            1.00         6  
+   macro avg       1.00      1.00      1.00         6  
+weighted avg       1.00      1.00      1.00         6  
+
+🔍 Random Forest  
+Accuracy: 1.0  
+              precision    recall  f1-score   support
+
+   0               1.00      1.00      1.00         3  
+   1               1.00      1.00      1.00         3
+
+   accuracy                            1.00         6  
+   macro avg       1.00      1.00      1.00         6  
+weighted avg       1.00      1.00      1.00         6
+
+## Estensioni didattiche
+- Aggiungi train-test split per valutare la generalizzazione
+- Visualizza l’albero con plot_tree (se vuoi interpretabilità)
+- Usa predict_proba per analizzare la sicurezza delle predizioni
+- Introduci noise per mostrare la fragilità del Decision Tree
+
+Vuoi che lo trasformi in un notebook didattico con celle, domande guidate e sezioni markdown? Posso anche aggiungere una versione con GridSearchCV per ottimizzare i parametri. Fammi sapere!
+
