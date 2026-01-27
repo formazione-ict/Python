@@ -192,3 +192,7 @@ Confrontare tre modelli:
 - Quale metrica è più alta?
 - Il modello è più preciso o più sensibile?
 - Come potresti migliorare il modello?
+    - Aumentando il numero di iterazioni (già impostato a 1000)
+    - Scalando i dati per migliorare la convergenza
+    - Provando solver alternativi come suggerito dalla documentazione di scikit-learn.
+Inoltre, si potrebbero esplorare tecniche di feature engineering o modelli più complessi per migliorare ulteriormente le prestazioni.
