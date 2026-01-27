@@ -165,10 +165,26 @@ Confrontare:
 - Visualizza la matrice dei risultati con `pandas.DataFrame(grid.cv_results_)`
 - Confronta con `RandomizedSearchCV` per tuning più veloce
 
-@ Esercizio: Diagnosi del fitting di un modello
+# Esercizio: Diagnosi del fitting di un modello
 ## Obiettivo
 Confrontare tre modelli:
 - Underfitting → troppo semplice
 - Giusto → bilanciato
 - Overfitting → troppo complesso
 
+# Esercizio: Valutazione di un Modello
+## Obiettivo
+- Usa le metriche avanzate per valutare un classificatore binario.
+
+## Istruzioni
+1. - Carica un dataset binario (es. breast_cancer da sklearn.datasets).
+- Dividi in X_train, X_test, y_train, y_test.
+- Addestra un modello (es. LogisticRegression).
+- Calcola le metriche:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - roc_auc_score
+
+Visualizza la matrice di confusione.
