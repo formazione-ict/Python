@@ -14,7 +14,9 @@
     - Predict
     - Score
 - Notebook Workflow completo: dal dataset allo scaling (Standardizzazione delle Feature con Grafici)
-- Esercizio 1: Classificazione Iris (Decision Tree → Random Forest)
+- Esercizio 1:
+     - Classificazione Iris
+     - Classificazione Iris (Decision Tree → Random Forest)
 - Pipeline e FeatureUnion:
     - Automatizzare il workflow
 - Esercizio 2: Titanic - Preprocessing + Classificazione
