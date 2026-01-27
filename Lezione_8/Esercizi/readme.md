@@ -177,14 +177,18 @@ Confrontare tre modelli:
 - Usa le metriche avanzate per valutare un classificatore binario.
 
 ## Istruzioni
-1. - Carica un dataset binario (es. breast_cancer da sklearn.datasets).
-- Dividi in X_train, X_test, y_train, y_test.
-- Addestra un modello (es. LogisticRegression).
-- Calcola le metriche:
+1. Carica un dataset binario (es. breast_cancer da sklearn.datasets).
+2. Dividi in X_train, X_test, y_train, y_test.
+3. Addestra un modello (es. LogisticRegression).
+4. Calcola le metriche:
     - accuracy
     - precision
     - recall
     - f1_score
     - roc_auc_score
+5. Visualizza la matrice di confusione.
 
-Visualizza la matrice di confusione.
+## Domande
+- Quale metrica è più alta?
+- Il modello è più preciso o più sensibile?
+- Come potresti migliorare il modello?
