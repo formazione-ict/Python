@@ -13,6 +13,7 @@
     - Fit
     - Predict
     - Score
+- Notebook: Workflow completo: dal dataset allo scaling (senza errori)
 - Esercizio 1: Classificazione Iris (Decision Tree → Random Forest)
 - Pipeline e FeatureUnion:
     - Automatizzare il workflow
