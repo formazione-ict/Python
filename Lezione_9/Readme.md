@@ -1,4 +1,4 @@
-# Scikit-learn: open source di apprendimento automatico
+# Scikit-learn: open source di Machine Learning
 
 ## Argomenti:
 - Introduzione:
@@ -8,11 +8,6 @@
     - Dataset
     - Train-Test Split
     - Preprocessing
-- Workflow Scikit-learn:
-    - Estimator
-    - Fit
-    - Predict
-    - Score
 - Notebook Workflow completo: dal dataset allo scaling (Standardizzazione delle Feature con Grafici)
 - Esercizio 1:
      - Classificazione Iris
@@ -21,8 +16,16 @@
     - Automatizzare il workflow
 - Esercizio 2: Titanic - Preprocessing + Classificazione
 - Model Evaluation avanzata:
+    - Metriche
     - ROC curves
     - Confusion Matrix
-    - Metriche
+- Feature Importance & Feature Selection
 - Esercizio 3: Feature Engineering + Hyperparameter Tuning
+- Tecniche di validazionee del Modello:
+    - Cross-Validate
+    - K-Fold
+    - StratifiedFold
+- GridSearchCV: Hyperparameter Tuning
+- RandomizedSearchCV: Tuning Veloce
+- Salvataggio & Caricamento del Modello
 
