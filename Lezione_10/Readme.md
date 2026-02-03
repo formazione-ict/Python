@@ -5,11 +5,11 @@
     - K-Nearest Neighbors (KNN)
     - Support Vector Machines (SVM)
     - Naive Bayes (MultinomialNB, GaussianNB)
-    - Gradient Boosting (XGBoost, LightGBM)
-- Metriche avanzate:
+
+- Metriche:
     - Classification Report
     - Precision-Recall Curve (per classi sbilanciate)
-    - Confronto con ROC-AUC
+       - Confronto con ROC-AUC
 
 ## REGRESSIONE 📊
 - Algoritmi dettagliati:
@@ -21,6 +21,10 @@
 - Metriche:
     - MSE, RMSE, MAE, R²
     - Residual Plot per diagnostica
+
+## Gradient Boosting (XGBoost, LightGBM)
+
+## Residual Plot (Diagnostica Regressione)
 
 ## 3 ESERCIZI PRATICI NUOVI:
 - Spam Detection (Naive Bayes + TF-IDF)
