@@ -68,7 +68,8 @@ dtype: bool
 La funzione `any()` è utile, ma non ci mostra realmente quanti valori mancano per ogni colonna. Per approfondire questo problema, dobbiamo usare invece `sum()`.
 
 ```X_train.isnull().sum()```
--------------------------
+|           |           |
+|-----------|-----------|
 | pclass    | 0         |
 | name      | 0         |
 | sex       | 0         |
@@ -106,6 +107,7 @@ Ora che abbiamo un'idea approssimativa di dove si trovano i valori mancanti, dob
 In effetti, in questo caso, procederemo eliminando l'attributo "cabina". Questa scelta diventa più ovvia quando calcoliamo la percentuale di valori nulli.
 
 ```X_train.isnull().sum() / len(X_train) * 100```
+|           |                  |
 |-----------|------------------|
 | pclass    | 0.000000         |
 | name      | 0.000000         |
@@ -214,6 +216,205 @@ Tuttavia, abbiamo ancora un problema con la colonna del titolo: sembra che ci si
 | Ms            | 2      | 0    |
 | Rev           | 0      | 6    |
 | the Countess  | 1      | 0    |
+
+Per gli uomini, il titolo più comune è Mr; per le donne, Mrs e Miss. Vediamo se c'è una differenza nel tasso di sopravvivenza tra i due titoli più comuni per le donne.
+
+```
+print(f"Miss: {np.sum(y_train.astype(int)[X_train.title == 'Miss']) / len(X_train.title == 'Miss')}")
+print(f"Mrs: {np.sum(y_train.astype(int)[X_train.title == 'Mrs']) / len(X_train.title == 'Mrs')}")
+```
+
+Miss: 0.13371537726838587
+Mrs: 0.1174785100286533
+
+Sembra che la differenza sia insignificante, quindi li raggrupperemo semplicemente in uno.
+
+```
+X_comb = pd.concat([X_train, X_test])
+rare_titles = (X_comb['title'].value_counts() < 10)
+rare_titles
+```
+
+| title        | < 10        |
+|--------------|-------------|
+| Mr           | False       |
+| Miss         | False       |
+| Mrs          | False       |
+| Master       | False       |
+| Dr           | True        |
+| Rev          | True        |
+| Col          | True        |
+| Mlle         | True        |
+| Ms           | True        |
+| Major        | True        |
+| Mme          | True        |
+| the Countess | True        |
+| Don          | True        |
+| Dona         | True        |
+| Jonkheer     | True        |
+| Sir          | True        |
+| Lady         | True        |
+| Capt         | True        |
+
+```
+for dataset in [X_train, X_test]:
+  dataset.title.loc[dataset.title == 'Miss'] = 'Mrs'
+  dataset['title'] = dataset.title.apply(lambda x: 'rare' if rare_titles[x] else x)
+```
+```
+for dataset in [X_train, X_test]:
+  dataset.drop('ticket', axis=1, inplace=True)
+
+X_train.head()
+```
+| pclass | sex    | age  | fare    | embarked | family_size | is_alone | title |
+|--------|--------|------|---------|----------|-------------|----------|--------|
+| 3.0    | female | NaN  | 7.7500  | Q        | 0.0         | 1        | Mrs    |
+| 2.0    | female | 24.0 | 27.7208 | C        | 1.0         | 1        | Mrs    |
+| 3.0    | female | 11.0 | 31.2750 | S        | 6.0         | 0        | Mrs    |
+| 3.0    | male   | 25.0 | 7.2250  | C        | 0.0         | 1        | Mr     |
+| 3.0    | female | 16.0 | 7.6500  | S        | 0.0         | 1        | Mrs    |
+
+## Imputazione
+L'imputazione si riferisce a una tecnica utilizzata per sostituire i valori mancanti. 
+Esistono molte tecniche che possiamo utilizzare per l'imputazione. 
+Dall'analisi precedente, sappiamo che le colonne che richiedono l'imputazione sono le seguenti:
+- età
+- tariffa
+- imbarcato
+
+### Identificazione del tipo di dati
+Diamo prima un'occhiata ai tipi di dati per ciascuna colonna.
+
+```X_train.dtypes```
+
+| colonna      | dtype     |
+|--------------|-----------|
+| pclass       | float64   |
+| sex          | category  |
+| age          | float64   |
+| fare         | float64   |
+| embarked     | category  |
+| family_size  | float64   |
+| is_alone     | int64     |
+| title        | object    |
+
+Il controllo dei tipi di dati è necessario sia per l'imputazione che per la pre-elaborazione generale dei dati. 
+In particolare, dobbiamo prestare attenzione se una determinata colonna codifica variabili categoriche o numeriche. 
+Ad esempio, non possiamo usare la media per imputare variabili categoriche; al contrario, qualcosa come la moda avrebbe molto più senso.
+
+Il modo migliore per determinare se una variabile è categorica o meno è semplicemente utilizzare la conoscenza del dominio e osservare effettivamente i dati.
+
+Naturalmente, si potrebbero usare metodi improvvisati come quello seguente:
+```
+def get_cat_cols(df):
+  obj_cols = df.columns[df.dtypes == 'object']
+  cat_cols = df.columns[df.dtypes == 'category']
+  return set(obj_cols).union(set(cat_cols))
+
+cat_cols = get_cat_cols(X_train)
+cat_cols
+```
+```
+{'embarked', 'sex', 'title'}
+```
+
+Sebbene si possa pensare che si tratti di un hack funzionante, questo approccio è in realtà altamente pericoloso, anche in questo esempio di simulazione. 
+Ad esempio, si consideri `pclass`, che presumibilmente è una variabile numerica di tipo float64. 
+Tuttavia, in precedenza con `X_train.head()`, abbiamo visto che `pclass` è in realtà una variabile ordinale che assume valori discreti, tra 1.0, 2.0 e 3.0. 
+Quindi, i metodi "hack" non devono essere utilizzati isolatamente; come minimo, devono essere integrati con una qualche forma di input umano.
+
+## Pipeline
+Proviamo a utilizzare una semplice pipeline per gestire i valori mancanti in alcune variabili categoriali. 
+Questa sarà la nostra prima anteprima di come vengono dichiarate e utilizzate le pipeline.
+
+```
+cat_cols = ['embarked', 'sex', 'pclass', 'title', 'is_alone']
+cat_transformer = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='most_frequent')),
+    ('onehot', OneHotEncoder(handle_unknown='ignore', sparse=False)),
+    ('pca', PCA(n_components=10))
+])
+```
+
+Qui abbiamo dichiarato una pipeline in tre fasi: un imputatore, un codificatore one-hot e un'analisi delle componenti principali. 
+Il funzionamento è piuttosto semplice: l'imputatore cerca i valori mancanti e li riempie secondo la strategia specificata. 
+Ci sono molte strategie tra cui scegliere, come la più costante o la più frequente. 
+Quindi, codifichiamo le variabili categoriche con la codifica one-hot, poiché la maggior parte dei modelli di apprendimento automatico non accetta valori non numerici come input.
+
+L'ultimo passaggio della PCA potrebbe sembrare estraneo. Tuttavia, come discusso nel thread di Stack Overflow: 
+
+"la combinazione giudiziosa di one-hot più PCA raramente può essere superata da altri schemi di codifica. La PCA trova la sovrapposizione lineare, quindi tenderà naturalmente a raggruppare caratteristiche simili nella stessa caratteristica."
+
+Matematicamente o statisticamente parlando, questa proposizione sembra valida. 
+L'idea è che la codifica one-hot di tutte le variabili categoriali potrebbe portare a un numero ingestibile di colonne, facendo così naufragare nella maledizione della dimensionalità. 
+Una soluzione rapida, quindi, è applicare la PCA o qualche altra tecnica di riduzione della dimensionalità ai risultati della codifica one-hot.
+
+Tornando all'implementazione, notiamo che possiamo esaminare i singoli componenti di `cat_transformer` semplicemente trattandolo come un iterabile, molto simile a una lista o a una tupla. Ad esempio,
+
+```
+cat_transformer[0]
+```
+```
+SimpleImputer(add_indicator=False, copy=True, fill_value=None,
+              missing_values=nan, strategy='most_frequent', verbose=0)
+```
+
+Successivamente, dobbiamo fare qualcosa di simile per le variabili numeriche. 
+Solo che questa volta non dovremmo codificare i dati una sola volta; ciò che vogliamo fare è applicare una scalatura, come la normalizzazione o la standardizzazione. 
+Esiste `RobustScaler()`, che utilizza mediana e IQR invece di media e deviazione standard come fa `StandardScaler()`. 
+Questo rende `RobustScaler()` una scelta migliore in presenza di valori anomali. Proviamo a usarlo qui.
+
+```
+num_cols = ['age', 'fare', 'family_size']
+num_transformer = Pipeline(steps=[
+    ('imputer', KNNImputer(n_neighbors=5)),
+    ('scaler', RobustScaler())
+])
+```
+Ora che abbiamo le due pipeline per le colonne numeriche e categoriche, è il momento di assemblarle in un unico pacchetto, quindi applicare il processo all'intero dataframe. Questo packaging può essere facilmente astratto tramite ColumnTransformer, che è il collante magico per unire tutti i pezzi. Dobbiamo semplicemente specificare quale trasformatore si applica a quale colonna, insieme al nome di ciascun processo.
+
+```
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', num_transformer, num_cols),
+        ('cat', cat_transformer, cat_cols)
+    ])
+```
+
+`preprocessor` è il pacchetto completo che utilizzeremo per trasformare i nostri dati. Si noti che `ColumnTransformer()` ci consente di specificare quale pipeline verrà applicata a quale colonna. 
+Questo è utile, poiché per impostazione predefinita, gli imputatori o i trasformatori si applicano all'intero set di dati. 
+Più spesso o meno, questo non è ciò che desideriamo; vogliamo invece essere in grado di microgestire colonne categoriali e numeriche. La combinazione di pipeline e ColumnTransformer è quindi molto potente.
+
+Ora non ci resta che costruire una pipeline finale che includa il modello di classificazione. 
+Vediamo come si comporta il nostro modello in una convalida incrociata stratificata a 5 livelli. 
+Si noti che questo avviene senza alcuna ottimizzazione degli iperparametri.
+
+```
+clf = Pipeline(steps=[('preprocessor', preprocessor),
+                      ('classifier', RandomForestClassifier())])
+
+cross_val_score(clf, X_train, y_train, cv=5, scoring="accuracy").mean()
+```
+
+0.7630849851902483
+
+E così possiamo valutare le prestazioni del nostro modello.
+
+Per quanto riguarda il fitting e il testing in generale, un consiglio utile è la seguente regola pratica:
+
+Se una pipeline termina con un trasformatore, chiama `fit_transform()` e poi transform().
+Se una pipeline termina con un modello, chiama `fit()` e poi predict(). Chiamando `fit()` tutti i passaggi precedenti al modello verranno sottoposti a `fit_transform()` e il passaggio finale, il modello, eseguirà `fit()`. 
+Questa configurazione ha molto senso: se la pipeline contiene un modello, significa che si tratta del pacchetto completo. Tutti i passaggi precedenti al modello implicherebbero l'elaborazione dei dati; l'ultimo passaggio farebbe sì che il modello utilizzi i dati per fare una previsione. Pertanto, la chiamata a fit() dovrebbe essere applicata solo all'ultimo modello dopo che fit_transform() è stata chiamata su tutti i passaggi di pre-elaborazione. Se la pipeline stessa è solo un insieme di pre-processori, d'altra parte, dovremmo poter chiamare solo `fit_transform()`.
+
+## Ricerca iperparametri
+
+
+
+
+
+
+
 
 
 
