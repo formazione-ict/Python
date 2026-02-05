@@ -52,6 +52,7 @@ Prima di procedere con qualsiasi analisi dei dati, è sempre una buona idea pres
 
 `X_train.isnull().any()`
 
+
 | pclass    | False         |
 | name      | False         |
 | sex       | False         |
