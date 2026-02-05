@@ -32,7 +32,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=
 ```
 Osserviamo i dati chiamando `.head()`. Per impostazione predefinita, questa funzione mostra le prime cinque righe e tutte le colonne che possono essere inserite nel notebook.
 
-`X_train.head()`
+```X_train.head()```
 | pclass | name                                               | sex    | age  | sibsp | parch | ticket         | fare    | cabin | embarked |
 |--------|----------------------------------------------------|--------|------|-------|-------|----------------|---------|-------|----------|
 | 3.0    | McCarthy, Miss. Catherine 'Katie'                  | female | NaN  | 0.0   | 0.0   | 383123         | 7.7500  | None  | Q        |
@@ -50,9 +50,9 @@ Esaminiamo i dati più in dettaglio per gettare le basi per la nostra analisi. Q
 ### Valori mancanti
 Prima di procedere con qualsiasi analisi dei dati, è sempre una buona idea prestare attenzione ai valori mancanti: quanti sono, dove si verificano, ecc. Diamo un'occhiata.
 
-`X_train.isnull().any()`
+```X_train.isnull().any()```
 
-
+|-----------|---------------|
 | pclass    | False         |
 | name      | False         |
 | sex       | False         |
@@ -67,8 +67,8 @@ dtype: bool
 
 La funzione `any()` è utile, ma non ci mostra realmente quanti valori mancano per ogni colonna. Per approfondire questo problema, dobbiamo usare invece `sum()`.
 
-`X_train.isnull().sum()`
-
+```X_train.isnull().sum()```
+|-----------|-----------|
 | pclass    | 0         |
 | name      | 0         |
 | sex       | 0         |
@@ -105,8 +105,8 @@ Ora che abbiamo un'idea approssimativa di dove si trovano i valori mancanti, dob
 - Utilizzare l'imputazione per riempire i valori mancanti con valori alternativi
 In effetti, in questo caso, procederemo eliminando l'attributo "cabina". Questa scelta diventa più ovvia quando calcoliamo la percentuale di valori nulli.
 
-`X_train.isnull().sum() / len(X_train) * 100`
-
+```X_train.isnull().sum() / len(X_train) * 100```
+|-----------|------------------|
 | pclass    | 0.000000         |
 | name      | 0.000000         |
 | sex       | 0.000000         |
@@ -194,9 +194,10 @@ X_train.head()
 Ora abbiamo alcuni dati che sembrano molto più gestibili. 
 Tuttavia, abbiamo ancora un problema con la colonna del titolo: sembra che ci siano molti titoli, quindi probabilmente dovremmo effettuare un po' di binning o raggruppamento.
 
-`pd.crosstab(X_train['title'], X_train['sex'])`
+```pd.crosstab(X_train['title'], X_train['sex'])```
 
 | sex           | female | male |
+|---------------|--------|------|
 | title         |        |      |
 |---------------|--------|------|
 | Capt          | 0      | 1    |
