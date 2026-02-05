@@ -51,7 +51,7 @@ Esaminiamo i dati più in dettaglio per gettare le basi per la nostra analisi. Q
 Prima di procedere con qualsiasi analisi dei dati, è sempre una buona idea prestare attenzione ai valori mancanti: quanti sono, dove si verificano, ecc. Diamo un'occhiata.
 
 ```X_train.isnull().any()```
-
+|           |               |
 |-----------|---------------|
 | pclass    | False         |
 | name      | False         |
