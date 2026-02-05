@@ -1,15 +1,45 @@
 # CORSO SVILUPPO APPLICAZIONI E ANALISI DATI CON PYTHON
 
-Per iniziare:
+## PROGRAMMA
+1.	Fondamenti di Python: Strutture dati, Liste
+2.	Dizionari, Stringhe e file, Funzioni
+3.	Jupyter: notebook per lo sviluppo di progetti python
+4.	Pandas: strutture dati e operazioni base
+5.	Pandas: filtri, merge, operazioni aggiuntive
+6.	Programmazione ad oggetti in Python
+7.	Matplotlib: libreria per la creazione di grafici
+8.	Concetti di Machine learning
+9.	Sklearn open source di apprendimento automatico 
+10.	Sklearn classificazione e regressione
+11.	Integrazione con moduli esterni in C, C++, Java
+
+## CONOSCENZE
+- Strumenti di sviluppo
+- Tecniche di programmazione strutturata
+- Tecniche di programmazione ad oggetti
+- Linguaggi di programmazione imperativi
+- Linguaggi di programmazione ad oggetti
+- Tipologie di applicazioni
+- Tecniche di debugging
+- Metodi di collaudo di procedure e applicazioni
+
+## ABILITÀ
+-	Utilizzare e integrare componenti reperibili sul mercato
+-	Applicare tecniche di collaudo del software
+-	Scegliere strumenti di sviluppo in base alle caratteristiche dell’applicazione
+-	Applicare tecniche di codifica degli algoritmi
+-	Applicare tecniche di documentazione dell’applicazione
+
+## Per iniziare:
 1. Download Python install manager da https://www.python.org/downloads/
 2. Nel terminale digita
    ```py```
 4. Per uscire da Python digitare
    ```exit```
 
-5. TOP 10 LIBRERIE PYTHON
+## TOP 10 LIBRERIE PYTHON
 
-**NUMPY**
+**NUMPY** `py -m pip install numpy`
 - Cos'è: Libreria per il calcolo numerico e gli array.
 - Perché: Operazioni veloci su grandi dataset e matrici.
 - Come aiuta: Rende i calcoli matematici e l'elaborazione dei dati estremamente veloci.
@@ -50,7 +80,7 @@ Per iniziare:
 - Come aiuta: Abilita il riconoscimento facciale, il tracciamento di oggetti e l'applicazione di filtri.
    
 6. Installare i pacchetti direttamente nel terminale e non in Python
-```py -m pip install numpy
+```
 py -m pip install matplotlib
 py -m pip install jupyterlab pandas
 py -m pip install seaborn
