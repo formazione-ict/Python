@@ -68,7 +68,7 @@ dtype: bool
 La funzione `any()` è utile, ma non ci mostra realmente quanti valori mancano per ogni colonna. Per approfondire questo problema, dobbiamo usare invece `sum()`.
 
 ```X_train.isnull().sum()```
-|-----------|-----------|
+-------------------------
 | pclass    | 0         |
 | name      | 0         |
 | sex       | 0         |
